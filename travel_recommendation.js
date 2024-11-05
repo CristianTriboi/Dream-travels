@@ -12,6 +12,7 @@ function searchDestination() {
         .then(data => {
 
         console.log(JSON.stringify(data));
+        /*const atraction = data.find(item => item.toLowerCase() === input);*/
         const destination = data.countries.find(item => item.name.toLowerCase() === input);
         console.log(destination);
         /*if (destination) {
@@ -33,4 +34,12 @@ function searchDestination() {
         });
 }
 
+function containsWord(word, text) {
+    const found = text.toLowerCase().includes(word.toLowerCase());
+    found ??= false;
+    return found;
+}
+
 btnSearch.addEventListener('click', searchDestination);
+console.log(containsWord('hello', 'hi my beautifull friend'));
+console.log(containsWord('hello', 'hi  hello beautifull friend'));
