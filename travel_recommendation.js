@@ -11,8 +11,8 @@ function searchDestination() {
         .then(response => response.json())
         .then(data => {
 
-        const destination = data.conditions.find(item => item.name.toLowerCase() === input);
-        console.log(response);
+        console.log(JSON.stringify(data));
+        const destination = data.countries.find(item => item.name.toLowerCase() === input);
         console.log(destination);
         /*if (destination) {
             const symptoms = destination.symptoms.join(', ');
