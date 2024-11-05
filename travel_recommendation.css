@@ -134,12 +134,9 @@ nav {
     text-align:left;
 }
 
-div div ul li {
-    display: inline;
-    margin-right: 10px;
-  }
-
-  div div ul {
-    list-style-type: none;
-    /* padding: 0; */
-  }divdiv divdiv
+.card1, .card2, .card3 {
+    font-size: medium;
+    color: #333;
+    float: left;
+    width: 33.33%;
+}
