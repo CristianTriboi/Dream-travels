@@ -11,14 +11,23 @@
             <li><a href="./index.html" id="home">Home </a></li>
             <li><a href="./about_us.html" id="about">About Us </a></li>
             <li><a href="./contact_us.html" id="contact">Contact Us </a></li>
-            <li><input type="text" id="destinationInput" placeholder="Enter the next dream travel">  </li>
-            <li><button id='btnSearch'>Search</button></li>
-            <li><button id='btnReset'>Reset</button></li>
         </ul>
     </nav>
     <div class='containter'>
-        <div id='mainTitleText' class='mainTitleText'>Explore</br>Travel</br>Dream</div>
-        <div id='mainText' class='mainText'>Discover the world,</br>one breathtaking destination</br>at a time</div>
+        <h1>Contact us</h1>
+        <form action="submit" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+    
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+    
+            <label for="message">Message:</label>  
+    
+            <textarea id="message" name="message" rows="5" cols="40" style='border-radius: 12px;' required></textarea><br><br>
+    
+            <button id="btnSubmit">Submit message</button>
+        </form>
         <div class='socialButtons'>
             <a href="https://facebook.com">
                 <img src="src/fb_logo.png" style="width: 30px;height: 30px;margin-top: 40%;margin-left: 10%;">

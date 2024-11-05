@@ -52,6 +52,7 @@ nav {
   }
   
   input[type="text"],
+  input[type="email"],
   input[type="number"],
   select {
     width: 200px;
