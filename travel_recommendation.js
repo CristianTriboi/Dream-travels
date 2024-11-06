@@ -11,9 +11,12 @@ function searchDestination() {
         .then(response => response.json())
         .then(data => {
 
-        console.log(JSON.stringify(data));
-        /*const atraction = data.find(item => item.toLowerCase() === input);*/
-        const destination = data.countries.find(item => item.name.toLowerCase() === input);
+        /*console.log(JSON.stringify(data));*/
+        const keyMatch = containsWord(input, Object.keys(data));
+        console.log(keyMatch);
+        console.log("single obj: " + JSON.stringify(data?.[keyMatch]));
+        /*const atraction = data.find((item) => item.toLowerCase() === input);*/
+        const destination = Object.values(data).filter(item => item.keyMatch.toLowerCase() === input);
         console.log(destination);
         /*if (destination) {
             const symptoms = destination.symptoms.join(', ');
@@ -34,12 +37,15 @@ function searchDestination() {
         });
 }
 
-function containsWord(word, text) {
-    const found = text.toLowerCase().includes(word.toLowerCase());
-    found ??= false;
-    return found;
+function containsWord(word, objArr) {
+    for (const key of objArr) {
+        const find = key.toLowerCase().includes(word.toLowerCase());
+        find ??= false;
+        if (find) {
+            return key;
+        }
+    }
+    return false;
 }
 
 btnSearch.addEventListener('click', searchDestination);
-console.log(containsWord('hello', 'hi my beautifull friend'));
-console.log(containsWord('hello', 'hi  hello beautifull friend'));
