@@ -14,22 +14,29 @@ function searchDestination() {
         /*console.log(JSON.stringify(data));*/
         const keyMatch = containsWord(input, Object.keys(data));
         console.log(keyMatch);
-        console.log("single obj: " + JSON.stringify(data?.[keyMatch]));
-        /*const atraction = data.find((item) => item.toLowerCase() === input);*/
-        const destination = Object.values(data).filter(item => item.keyMatch.toLowerCase() === input);
-        console.log(destination);
-        /*if (destination) {
-            const symptoms = destination.symptoms.join(', ');
-            const prevention = destination.prevention.join(', ');
-            const treatment = destination.treatment;
-            resultDiv.innerHTML += `<h2>${destination.name}</h2>`;
-            resultDiv.innerHTML += `<img src="${destination.imagesrc}" alt="hjh">`;
-            resultDiv.innerHTML += `<p><strong>Symptoms:</strong> ${symptoms}</p>`;
+        console.log("single obj: " + JSON.stringify(data.countries));
+        //const atraction = data.keyMatch.find(item => item.name);
+        
+        /*const destination = Object.values(data).filter(item => item.keyMatch.toLowerCase() === input);*/
+        console.log(keyMatch);
+        if (keyMatch) {
+            for (const places of data?.[keyMatch]) {
+                const countryName = JSON.stringify(places.name);
+                console.log("try to iterate through array: " + JSON.stringify(places));
+                const cities = places.name;
+                console.log(cities);
+            }
+            /*const name = keyMatch.name.join(', ');
+            const prevention = keyMatch.prevention.join(', ');
+            const treatment = keyMatch.treatment;
+            resultDiv.innerHTML += `<h2>${keyMatch.name}</h2>`;
+            resultDiv.innerHTML += `<img src="${keyMatch.imagesrc}" alt="hjh">`;
+            resultDiv.innerHTML += `<p><strong>Symptoms:</strong> ${name}</p>`;
             resultDiv.innerHTML += `<p><strong>Prevention:</strong> ${prevention}</p>`;
-            resultDiv.innerHTML += `<p><strong>Treatment:</strong> ${treatment}</p>`;
+            resultDiv.innerHTML += `<p><strong>Treatment:</strong> ${treatment}</p>`;*/
         } else {
             resultDiv.innerHTML = 'Destination not found.';
-        }*/
+        }
         })
         .catch(error => {
         console.error('Error:', error);
