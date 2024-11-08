@@ -23,6 +23,11 @@ function searchDestination() {
             for (const places of data?.[keyMatch]) {
                 const countryName = JSON.stringify(places.name);
                 console.log("try to iterate through array: " + JSON.stringify(places));
+                if ("cities" in places) {
+                    for(const citiesObj of places?.["cities"]) {
+                        console.log("we found the cities object: " + JSON.stringify(citiesObj));
+                    }
+                }
                 const cities = places.name;
                 console.log(cities);
             }
