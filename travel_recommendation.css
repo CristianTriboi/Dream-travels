@@ -141,3 +141,45 @@ nav {
     float: left;
     width: 33.33%;
 }
+
+/* cards styling */
+
+.searchDestination {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: absolute;
+    right: 20px;
+    background-color: #ccc;
+}
+
+.card {
+  width: 300px;
+  border: 1px solid #2b2a2aa2a;
+  border-radius: 5px;
+  margin: 10px;
+  overflow: auto; /* Enable scrolling */
+  max-height: 400px; /* Set a maximum height to trigger scrolling */
+}
+
+.card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* Ensure image fills the container and maintains aspect ratio */
+}
+
+.card-content {
+  padding: 10px;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  
+}
+
+.card-description {
+  font-size: 18;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}

@@ -1,5 +1,7 @@
 const btnSearch = document.getElementById('btnSearch');
 const btnReset = document.getElementById('btnReset');
+const resultDiv = document.getElementById('result');
+resultDiv.innerHTML = '';
 
 
 function searchDestination() {
@@ -11,34 +13,25 @@ function searchDestination() {
         .then(response => response.json())
         .then(data => {
 
-        /*console.log(JSON.stringify(data));*/
         const keyMatch = containsWord(input, Object.keys(data));
-        console.log(keyMatch);
+        /*console.log(keyMatch);
         console.log("single obj: " + JSON.stringify(data.countries));
-        //const atraction = data.keyMatch.find(item => item.name);
         
-        /*const destination = Object.values(data).filter(item => item.keyMatch.toLowerCase() === input);*/
-        console.log(keyMatch);
+        console.log(keyMatch);*/
         if (keyMatch) {
             for (const places of data?.[keyMatch]) {
                 const countryName = JSON.stringify(places.name);
-                console.log("try to iterate through array: " + JSON.stringify(places));
+                //console.log("try to iterate through array: " + JSON.stringify(places));
                 if ("cities" in places) {
                     for(const citiesObj of places?.["cities"]) {
-                        console.log("we found the cities object: " + JSON.stringify(citiesObj));
+                        buildHtml(citiesObj);
+                        //console.log("we found the cities object: " + JSON.stringify(citiesObj));
                     }
                 }
-                const cities = places.name;
-                console.log(cities);
+                buildHtml(places);
+                /*const cities = places.name;
+                console.log(cities);*/
             }
-            /*const name = keyMatch.name.join(', ');
-            const prevention = keyMatch.prevention.join(', ');
-            const treatment = keyMatch.treatment;
-            resultDiv.innerHTML += `<h2>${keyMatch.name}</h2>`;
-            resultDiv.innerHTML += `<img src="${keyMatch.imagesrc}" alt="hjh">`;
-            resultDiv.innerHTML += `<p><strong>Symptoms:</strong> ${name}</p>`;
-            resultDiv.innerHTML += `<p><strong>Prevention:</strong> ${prevention}</p>`;
-            resultDiv.innerHTML += `<p><strong>Treatment:</strong> ${treatment}</p>`;*/
         } else {
             resultDiv.innerHTML = 'Destination not found.';
         }
@@ -58,6 +51,20 @@ function containsWord(word, objArr) {
         }
     }
     return false;
+}
+
+function buildHtml(finalObj) {
+    console.log("we finaly are here with the final obj " + finalObj.name);
+    /*const name = finalObj.name.join(', ');
+    const description = finalObj.description;?*/
+    resultDiv.innerHTML += `<div class="card">`;
+    resultDiv.innerHTML += `<h2>${finalObj.name}</h2>`;
+    resultDiv.innerHTML += `<img src="${finalObj.imageUrl}" alt="card-image" class="card-image">`;
+    resultDiv.innerHTML += `<div class="card-content">`;
+    //resultDiv.innerHTML += `<p class="card-title"> ${finalObj.name}</p>`;
+    resultDiv.innerHTML += `<p class="card-description"> ${finalObj.description}</p>`;
+    resultDiv.innerHTML += `</div>`;
+    resultDiv.innerHTML += `</div>`;
 }
 
 btnSearch.addEventListener('click', searchDestination);
