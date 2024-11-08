@@ -24,6 +24,9 @@ function searchDestination() {
                 //console.log("try to iterate through array: " + JSON.stringify(places));
                 if ("cities" in places) {
                     for(const citiesObj of places?.["cities"]) {
+                        if (!citiesObj.description) {
+                            continue;
+                        }
                         buildHtml(citiesObj);
                         //console.log("we found the cities object: " + JSON.stringify(citiesObj));
                     }
@@ -66,5 +69,7 @@ function buildHtml(finalObj) {
     resultDiv.innerHTML += `</div>`;
     resultDiv.innerHTML += `</div>`;
 }
+
+
 
 btnSearch.addEventListener('click', searchDestination);
