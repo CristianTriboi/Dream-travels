@@ -19,7 +19,8 @@ function searchDestination() {
                 const countryName = JSON.stringify(places.name);
                 if ("cities" in places) {
                     for(const citiesObj of places?.["cities"]) {
-                        if (!citiesObj.description) {
+                        if (citiesObj.description.includes(",")) {
+                            console.log("bbject cities to delete" + citiesObj.description);
                             continue;
                         }
                         buildHtml(citiesObj);
@@ -50,13 +51,10 @@ function containsWord(word, objArr) {
 
 function buildHtml(finalObj) {
     console.log("we finaly are here with the final obj " + finalObj.name);
-    /*const name = finalObj.name.join(', ');
-    const description = finalObj.description;?*/
     resultDiv.innerHTML += `<div id='card' class="card">`;
     resultDiv.innerHTML += `<h2>${finalObj.name}</h2>`;
     resultDiv.innerHTML += `<img src="${finalObj.imageUrl}" alt="card-image" class="card-image">`;
     resultDiv.innerHTML += `<div class="card-content">`;
-    //resultDiv.innerHTML += `<p class="card-title"> ${finalObj.name}</p>`;
     resultDiv.innerHTML += `<p class="card-description"> ${finalObj.description}</p>`;
     resultDiv.innerHTML += `</div>`;
     resultDiv.innerHTML += `</div>`;
@@ -66,5 +64,10 @@ function resetResults() {
     document.getElementById("result").innerHTML = "";
 }
 
+function submit() {
+    console.log("Success");
+}
+
 btnSearch.addEventListener('click', searchDestination);
 btnReset.addEventListener('click', resetResults);
+btnSubmit.addEventListener('click', submit);

@@ -161,8 +161,8 @@ nav {
   border: 1px solid #333;
   border-radius: 5px;
   margin: 10px;
-  overflow: auto; /* Enable scrolling */
-  max-height: 400px; /* Set a maximum height to trigger scrolling */
+  overflow-y: auto; /* Enable scrolling */
+  max-height: 200px; /* Set a maximum height to trigger scrolling */
 }
 
 .card-image {
