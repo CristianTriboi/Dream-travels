@@ -161,7 +161,7 @@ nav {
   border: 1px solid #333;
   border-radius: 5px;
   margin: 10px;
-  overflow-y: auto; /* Enable scrolling */
+  overflow-y: scroll; /* Enable scrolling */
   max-height: 200px; /* Set a maximum height to trigger scrolling */
 }
 

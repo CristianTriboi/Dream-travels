@@ -1,5 +1,6 @@
 const btnSearch = document.getElementById('btnSearch');
 const btnReset = document.getElementById('btnReset');
+const btnSubmit = document.getElementById('btnSubmit');
 const resultDiv = document.getElementById('result');
 resultDiv.innerHTML = '';
 
@@ -16,17 +17,14 @@ function searchDestination() {
 
         if (keyMatch) {
             for (const places of data?.[keyMatch]) {
-                const countryName = JSON.stringify(places.name);
                 if ("cities" in places) {
                     for(const citiesObj of places?.["cities"]) {
-                        if (citiesObj.description.includes(",")) {
-                            console.log("bbject cities to delete" + citiesObj.description);
-                            continue;
-                        }
                         buildHtml(citiesObj);
                     }
                 }
-                buildHtml(places);
+                if ("description" in places) {
+                    buildHtml(places);
+                }
             }
         } else {
             resultDiv.innerHTML = 'Destination not found.';
@@ -50,7 +48,7 @@ function containsWord(word, objArr) {
 }
 
 function buildHtml(finalObj) {
-    console.log("we finaly are here with the final obj " + finalObj.name);
+    //console.log("we finaly are here with the final obj " + finalObj.name);
     resultDiv.innerHTML += `<div id='card' class="card">`;
     resultDiv.innerHTML += `<h2>${finalObj.name}</h2>`;
     resultDiv.innerHTML += `<img src="${finalObj.imageUrl}" alt="card-image" class="card-image">`;
@@ -65,6 +63,9 @@ function resetResults() {
 }
 
 function submit() {
+    document.getElementById("name").innerHTML = "";
+    document.getElementById("email").innerHTML = "";
+    document.getElementById("message").innerHTML = "";
     console.log("Success");
 }
 
