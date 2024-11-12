@@ -8,14 +8,14 @@
 <body>
     <nav><h1>Dream travels</h1>
         <ul>
-            <li><a href="./index.html" id="home">Home </a></li>
+            <li><a href="./travel_recommendation.html" id="home">Home </a></li>
             <li><a href="./about_us.html" id="about">About Us </a></li>
             <li><a href="./contact_us.html" id="contact">Contact Us </a></li>
         </ul>
     </nav>
     <div class='containter'>
         <h1>Contact us</h1>
-        <form action="submit" method="post">
+        <form>
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required><br><br>
     
@@ -28,14 +28,14 @@
     
             <button id="btnSubmit">Submit message</button>
         </form>
-        <div class='socialButtons'>
-            <a href="https://facebook.com">
-                <img src="src/fb_logo.png" style="width: 30px;height: 30px;margin-top: 40%;margin-left: 10%;">
-            </a>
-            <a href="https://instagram.com">
-                <img src="src/ig_logo.png" style="width: 30px;height: 30px;margin-top: 40%;">
-            </a>
-        </div>
+    </div>
+    <div class='socialButtons'>
+        <a href="https://facebook.com">
+            <img src="src/fb_logo.png" id='fbButton' class='fbButton'>
+        </a>
+        <a href="https://instagram.com">
+            <img src="src/ig_logo.png" id='igButton' class='igButton'>
+        </a>
     </div>
     <script src="./travel_recommendation.js"></script>
 </body>

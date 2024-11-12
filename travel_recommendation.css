@@ -35,15 +35,14 @@ nav {
     font-family: Arial, sans-serif;
     background-image: url("src/maldives.jpg");
     background-size: cover;
-    /* margin: 20px; */
   }
   
   h1 {
     margin-bottom: 20px;
   }
-  
-  div {
-    margin-bottom: 10px;
+
+  h2 {
+    margin-left: 10px;
   }
   
   label {
@@ -103,13 +102,13 @@ nav {
   }
 
 .companyInfo{
-    font-size: small;
+    font-size: large;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     position:relative;
     margin-left: 5%;
-    margin-right: 15%;
-    margin-top: 0.5%;
-    padding: 10px;
+    margin-right: 40%;
+    padding-left: 10px;
+    padding-bottom: 10px;
     text-align:left;
 }
 
@@ -136,10 +135,31 @@ nav {
 }
 
 .card1, .card2, .card3 {
-    font-size: medium;
+    font-size: x-large;
+    padding: 10px;
     color: #333;
     float: left;
     width: 33.33%;
+}
+
+.socialButtons {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+}
+
+.fbButton {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+}
+
+.igButton {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
 }
 
 /* cards styling */
@@ -157,33 +177,34 @@ nav {
 }
 
 .card {
-  width: 300px;
-  border: 1px solid #333;
-  border-radius: 5px;
-  margin: 10px;
-  overflow-y: scroll; /* Enable scrolling */
-  max-height: 200px; /* Set a maximum height to trigger scrolling */
+    width: 300px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    margin: 10px;
+    overflow-y: scroll; /* Enable scrolling */
+    max-height: 200px; /* Set a maximum height to trigger scrolling */
 }
 
 .card-image {
-  width: 600px;
-  height: 300px;
-  object-fit: cover; /* Ensure image fills the container and maintains aspect ratio */
+    width: 600px;
+    height: 300px;
+    object-fit: cover; /* Ensure image fills the container and maintains aspect ratio */
 }
 
 .card-content {
-  padding: 5px;
+    padding: 5px;
 }
 
 .card-title {
-  font-size: 18px;
-  font-weight: bold;
+    font-size: 18px;
+    font-weight: bold;
   
 }
 
 .card-description {
-  font-size: 18;
-  margin-bottom: 15px;
-  word-wrap: break-word;
-  line-height: 1.5;
+    font-size: 16px;
+    margin-left: 10px;
+    margin-bottom: 15px;
+    word-wrap: break-word;
+    line-height: 1.5;
 }

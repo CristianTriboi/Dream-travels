@@ -2,7 +2,7 @@ const btnSearch = document.getElementById('btnSearch');
 const btnReset = document.getElementById('btnReset');
 const btnSubmit = document.getElementById('btnSubmit');
 const resultDiv = document.getElementById('result');
-resultDiv.innerHTML = '';
+//resultDiv.innerHTML = '';
 
 
 function searchDestination() {
@@ -48,7 +48,6 @@ function containsWord(word, objArr) {
 }
 
 function buildHtml(finalObj) {
-    //console.log("we finaly are here with the final obj " + finalObj.name);
     resultDiv.innerHTML += `<div id='card' class="card">`;
     resultDiv.innerHTML += `<h2>${finalObj.name}</h2>`;
     resultDiv.innerHTML += `<img src="${finalObj.imageUrl}" alt="card-image" class="card-image">`;
@@ -62,7 +61,13 @@ function resetResults() {
     document.getElementById("result").innerHTML = "";
 }
 
-function submit() {
+function submit(event) {
+    event.preventDefault();
+
+    const userName = document.getElementById("name").value;
+    const userEmail = document.getElementById("email").value;
+    const userMessage = document.getElementById("message").value;
+    console.log(userName + '-' + userEmail + '-' + userMessage);
     document.getElementById("name").innerHTML = "";
     document.getElementById("email").innerHTML = "";
     document.getElementById("message").innerHTML = "";
