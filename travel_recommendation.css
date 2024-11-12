@@ -125,7 +125,7 @@ nav {
     position:relative;
     margin-left: 5%;
     margin-right: 50%;
-    margin-top: 5%;
+    margin-top: 10%;
     padding: 10px;
     text-align:left;
 }
@@ -214,4 +214,8 @@ nav {
     margin-bottom: 15px;
     word-wrap: break-word;
     line-height: 1.5;
+}
+
+.contactUsForm {
+    margin-top: 6%;
 }
