@@ -178,6 +178,7 @@ nav {
     word-wrap: break-word;
     justify-content: space-between;
     position: absolute;
+    top: 17.4%;
     right: 30px;
     background-color: rgb(253, 235, 213);
     border-radius: 5px;
